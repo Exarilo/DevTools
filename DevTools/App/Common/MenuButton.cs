@@ -12,10 +12,16 @@ namespace DevTools.App.Common
         [DefaultValue(20), Browsable(true),
         DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         public int SplitWidth { get; set; }
-
         public MenuButton()
         {
             SplitWidth = 20;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
+        }
+        public MenuButton(ContextMenuStrip contextMenuStrip)
+        {
+            SplitWidth = 20;
+            this.Menu = contextMenuStrip;
+            this.BackgroundImageLayout = ImageLayout.Stretch;
         }
 
 
