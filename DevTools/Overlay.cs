@@ -12,7 +12,6 @@ namespace DevTools
     public partial class Overlay : Form
     {
         private KeyboardHook keyboardHook;
-        private Dictionary<MenuButton, IContextMenu> overlayMenus;
 
         public Overlay()
         {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevTools.App.Common;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -8,6 +9,7 @@ namespace DevTools
 {
     public partial class ToolBar : UserControl
     {
+        private ContextMenuStrip contextMenu;
         private List<Page> pageList { get; set; } = new List<Page>();
         private int currentPageIndex { get; set; } = 0;
  
@@ -19,6 +21,14 @@ namespace DevTools
             nudPageSelector.Maximum = enumValues.Count(); 
             enumValues.ToList().ForEach(x => pageList.Add(new Page(x.ToString())));
             PanelLeft.MouseWheel += PanelLeft_MouseWheel;
+            contextMenu = new ContextMenuStrip();
+            contextMenu.Items.Add("Settings", null, Settings_Click);
+            PanelLeft.MouseClick += PanelLeft_MouseClick;
+        }
+        private void Settings_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
         }
 
         private void PanelLeft_MouseWheel(object sender, MouseEventArgs e)
@@ -50,6 +60,14 @@ namespace DevTools
             this.nudPageSelector.Value= newValue;
             currentPageIndex = (int)newValue;
             DisplayPage((PageTitle)currentPageIndex);
+        }
+
+        private void PanelLeft_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                contextMenu.Show(PanelLeft, e.Location);
+            }
         }
     }
     public enum PageTitle

@@ -29,7 +29,8 @@ namespace DevTools.App.CSharp
         {
             try
             {
-                string fileContent = snippetItems.GetFileContent(); TextArea.Text = fileContent;
+                string fileContent = snippetItems.GetFileContent(); 
+                TextArea.Text = fileContent;
             }
             catch (Exception ex)
             {
@@ -243,14 +244,14 @@ namespace DevTools.App.CSharp
         {
             Clipboard.SetText(TextArea.Text);
 
-            lbCopy.Invoke((MethodInvoker)delegate
+            lbCopy?.Invoke((MethodInvoker)delegate
             {
                 lbCopy.Visible = true;
             });
 
             Task.Delay(2000).ContinueWith(_ =>
             {
-                lbCopy.Invoke((MethodInvoker)delegate
+                lbCopy?.Invoke((MethodInvoker)delegate
                 {
                     lbCopy.Visible = false;
                 });

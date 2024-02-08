@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.toolBarOverlay = new DevTools.ToolBar();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.SuspendLayout();
             // 
             // toolBarOverlay
@@ -40,6 +42,11 @@
             this.toolBarOverlay.Name = "toolBarOverlay";
             this.toolBarOverlay.Size = new System.Drawing.Size(800, 31);
             this.toolBarOverlay.TabIndex = 0;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // Overlay
             // 
@@ -59,6 +66,7 @@
         #endregion
 
         private ToolBar toolBarOverlay;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
 

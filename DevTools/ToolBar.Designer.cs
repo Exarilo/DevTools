@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.PanelRight = new System.Windows.Forms.Panel();
-            this.PanelLeft = new System.Windows.Forms.Panel();
-            this.nudPageSelector = new System.Windows.Forms.NumericUpDown();
             this.lbTitle = new System.Windows.Forms.Label();
+            this.nudPageSelector = new System.Windows.Forms.NumericUpDown();
+            this.PanelLeft = new System.Windows.Forms.Panel();
             this.PanelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPageSelector)).BeginInit();
             this.SuspendLayout();
@@ -46,13 +46,16 @@
             this.PanelRight.Size = new System.Drawing.Size(103, 31);
             this.PanelRight.TabIndex = 4;
             // 
-            // PanelLeft
+            // lbTitle
             // 
-            this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelLeft.Location = new System.Drawing.Point(0, 0);
-            this.PanelLeft.Name = "PanelLeft";
-            this.PanelLeft.Size = new System.Drawing.Size(695, 31);
-            this.PanelLeft.TabIndex = 5;
+            this.lbTitle.AutoSize = true;
+            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lbTitle.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Location = new System.Drawing.Point(28, 0);
+            this.lbTitle.Name = "lbTitle";
+            this.lbTitle.Size = new System.Drawing.Size(57, 21);
+            this.lbTitle.TabIndex = 8;
+            this.lbTitle.Text = "label1";
             // 
             // nudPageSelector
             // 
@@ -64,16 +67,14 @@
             this.nudPageSelector.TabIndex = 6;
             this.nudPageSelector.ValueChanged += new System.EventHandler(this.nudPageSelector_ValueChanged);
             // 
-            // lbTitle
+            // PanelLeft
             // 
-            this.lbTitle.AutoSize = true;
-            this.lbTitle.Dock = System.Windows.Forms.DockStyle.Right;
-            this.lbTitle.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.Location = new System.Drawing.Point(28, 0);
-            this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(57, 21);
-            this.lbTitle.TabIndex = 8;
-            this.lbTitle.Text = "label1";
+            this.PanelLeft.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelLeft.Location = new System.Drawing.Point(0, 0);
+            this.PanelLeft.Name = "PanelLeft";
+            this.PanelLeft.Size = new System.Drawing.Size(695, 31);
+            this.PanelLeft.TabIndex = 5;
+            this.PanelLeft.MouseClick += new System.Windows.Forms.MouseEventHandler(this.PanelLeft_MouseClick);
             // 
             // ToolBar
             // 
